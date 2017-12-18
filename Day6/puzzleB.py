@@ -5,7 +5,10 @@ def get_largest_index(arr):
         if value==max_val:
             return index, int(value)
 
-
+def get_index(arr, steps):
+    for index, value in enumerate(arr):
+        if value == curr_mem:
+            return steps - index 
 
 
 
@@ -34,4 +37,6 @@ while new_mem not in mem_hist:
 #    print "Current Configuration:", new_mem
     curr_mem = new_mem
     steps+=1
-print steps
+
+print "Iterations: ", steps
+print "Infinite Loop Size:", get_index(mem_hist, steps)
